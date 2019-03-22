@@ -27,7 +27,11 @@ namespace Excercise_1
             MissionList.Add(func);
             return this;
         }
-        
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public double Calculate(double value)
         {
             foreach (Func mission in MissionList)
