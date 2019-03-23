@@ -10,31 +10,48 @@ namespace Excercise_1
 
     public class FunctionsContainer
     {
+        // Use a dictionary as a data structure. 
         private Dictionary<string, Func> FuncMap;
         
+        /// <summary>
+        ///     Constructor of function container.
+        /// </summary>
         public FunctionsContainer()
         {
-            // use a dictionary as a data structure. 
             FuncMap = new Dictionary<string, Func>();
         }
 
-        public Func this[string funcName]
+        /// <summary>
+        ///     Override [] for the ability of accessing/changing elements in the dictionary with it.
+        /// </summary>
+        /// <param name="FuncName"></param> Adds a new element to the dictionary:
+        ///                                 FuncMap[FuncName] = Func.
+        ///                                 Also returns Func given FuncMap[funcName].
+        public Func this[string FuncName]
         {
+            // Returns Func given FuncMap[FuncName].
             get
             {
-                if (!FuncMap.ContainsKey(funcName))
+                //  If the key doesn't exist in the dictionary, add it as the Id function.
+                if (!FuncMap.ContainsKey(FuncName))
                 {
-                    FuncMap[funcName] = val => val;
+                    FuncMap[FuncName] = val => val;
                 }
-                return FuncMap[funcName];
+                // Return the function that matches the given title.
+                return FuncMap[FuncName];
                 
             }
+            // FuncMap[FuncName] = Func.
             set
             {
-                FuncMap[funcName] = value;
+                FuncMap[FuncName] = value;
             }
         }
         
+        /// <summary>
+        ///     Returns a list of the function titles of the mission.
+        /// </summary>
+        /// <returns></returns>
         public List<string> getAllMissions()
         {
             List<string> missions = new List<string>();

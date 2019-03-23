@@ -13,6 +13,11 @@ namespace Excercise_1
         public string Name { get; }
         public string Type { get; }
 
+        /// <summary>
+        ///     Constructor of SingleMission.
+        /// </summary>
+        /// <param name="func"></param> The function that will be added to the mission.
+        /// <param name="name"></param> Title of the mission.
         public SingleMission(Func func, String name)
         {
             // init the mission's details.
@@ -21,6 +26,11 @@ namespace Excercise_1
             Function = func;
         }
             
+        /// <summary>
+        ///     Calculates the value of the single mission.
+        /// </summary>
+        /// <param name="value"></param> The value that will be assigned for calculation.
+        /// <returns> Result of calculation. </returns>
         public double Calculate(double value)
         {
             double newValue = Function(value);
